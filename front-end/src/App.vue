@@ -1,30 +1,43 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <!-- <Header /> -->
+  <Nav />
+  <Loader v-if="showLoader"></Loader>
+  <section id="content">
+    <router-view></router-view>
+  </section>
+  <Footer/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<script>
+import Nav from "./components/Nav.vue";
+// import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Loader from "./components/Loader.vue";
+import { mapState } from "vuex";
+import { AUTO_LOGIN_ACTION } from "./store/storeconstants";
+export default {
+  name: "App",
+  computed: {
+    ...mapState({
+      showLoader: (state) => state.showLoader,
+      autoLogout: (state) => state.auth.autoLogout,
+    }),
+  },
+  watch: {
+    autoLogout(curValue, oldValue) {
+      if (curValue && curValue != oldValue) {
+        this.$router.replace("/login");
+      }
+    },
+  },
+  components: {
+    // Header,
+    Nav,
+    Loader,
+    Footer,
+  },
+  created() {
+    this.$store.dispatch(`auth/${AUTO_LOGIN_ACTION}`);
+  },
+};
+</script>
