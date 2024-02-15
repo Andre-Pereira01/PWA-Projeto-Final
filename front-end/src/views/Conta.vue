@@ -19,7 +19,7 @@
               v-model="form.firstname"
               class="form-control"
               id="firstname"
-              placeholder="primeiro nome..."
+              placeholder="Novo primeiro nome"
             />
           </section>
           <section class="col-md-2">
@@ -28,7 +28,7 @@
               v-model="form.lastname"
               class="form-control"
               id="lastname"
-              placeholder="último nome..."
+              placeholder="Novo último nome"
             />
           </section>
           <section class="col-md-8">
@@ -37,18 +37,18 @@
               v-model="form.name"
               class="form-control"
               id="name"
-              placeholder="nome completo..."
+              placeholder="Novo nome completo"
             />
           </section>
         </section>
         <section class="row mt-4">
-          <section class="col-md-8">
+          <section class="col-md-4">
             <input
               type="text"
               v-model="form.socios"
               class="form-control"
               id="cartaodecidadao"
-              placeholder="cartao de cidadão..."
+              placeholder="Novo cartao de cidadão"
             />
           </section>
           <section class="col-md-4">
@@ -57,7 +57,7 @@
               v-model="form.nif"
               class="form-control"
               id="nif"
-              placeholder="nif..."
+              placeholder="Novo nif"
             />
           </section>
         </section>
@@ -68,7 +68,7 @@
               v-model="form.email"
               class="form-control"
               id="email"
-              placeholder="email..."
+              placeholder="Novo email"
             />
           </section>
           <section class="col-md-4">
@@ -77,21 +77,22 @@
               v-model="form.mobile"
               class="form-control"
               id="mobile"
-              placeholder="telemóvel..."
+              placeholder="Novo telemóvel"
             />
           </section>
           <section class="col-md-4">
             <input
-              placeholder="Data de nascimento"
+              placeholder="Nova data de nascimento"
               class="form-control textbox-n"
               type="date"
               v-model="form.bdate"
               id="bdate"
             />
           </section>
+          <section class="row mt-4">
           <section class="col-md-4">
             <input
-              placeholder="Morada"
+              placeholder="Nova Morada"
               class="form-control textbox-n"
               type="text"
               v-model="form.morada"
@@ -100,7 +101,7 @@
           </section>
           <section class="col-md-4">
             <input
-              placeholder="Código Postal"
+              placeholder="Novo Código Postal"
               class="form-control textbox-n"
               type="text"
               v-model="form.codigopostal"
@@ -109,13 +110,14 @@
           </section>
           <section class="col-md-4">
             <input
-              placeholder="Freguesia"
+              placeholder="Nova Freguesia"
               class="form-control textbox-n"
               type="text"
               v-model="form.freguesia"
               id="freguesia"
             />
           </section>
+        </section>
         </section>
         <section class="row mt-4">
           <section>

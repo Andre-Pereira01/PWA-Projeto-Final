@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\back-end",
+    "\\back-end\\config",
+    "\\back-end\\controllers",
+    "\\back-end\\init",
+    "\\back-end\\views",
+    "\\front-end"
+  ],
+  "SelectedNode": "\\back-end\\views\\email.hbs",
+  "PreviewInSolutionExplorer": false
+}

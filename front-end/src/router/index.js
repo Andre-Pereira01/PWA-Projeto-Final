@@ -52,20 +52,20 @@ const routes = [{
         path: '/admin',
         name: 'admin',
         component: admin,
-        meta: { auth: true }
+        meta: { auth: false }
 
     },
     {
         path: '/notificacao',
         name: 'notificacao',
         component: notificacao,
-        meta: { auth: true }
+        meta: { auth: false }
     },
     {
         path: '/conta',
         name: 'conta',
         component: conta,
-        meta: { auth: true }
+        meta: { auth: false }
     }
 ]
 

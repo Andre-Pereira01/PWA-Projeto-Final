@@ -1,7 +1,7 @@
 <template>
     <section class="scrolling-component" ref="scrollcomponent">
       <section class="container my-body">
-        <h1 class="text-center mt-5">CRIAR NOTIFICAÇÃO/AVISO</h1>
+        <h1 class="text-center mt-5">CRIAR NOTÍCIA / NOTIFICAÇÃO</h1>
         <section
           v-if="isShow"
           role="alert"
@@ -79,7 +79,7 @@
                   id="notifPage"
                 />
                 <label class="form-check-label" for="subscribe_news">
-                  Publicar na página Avisos</label
+                  Publicar na página Noticias</label
                 >
               </section>
             </section>

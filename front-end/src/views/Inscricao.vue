@@ -55,11 +55,11 @@
         </section>
         <section class="row">
           <section class="col-md-4 g-4">
-            <input type="text" v-model="form.auth.username" class="form-control" id="username"
+            <input type="text" v-model="form.username" class="form-control" id="username"
               placeholder="Insira o username" />
           </section>
           <section class="col-md-4 g-4">
-            <input type="password" v-model="form.auth.password" class="form-control" id="password"
+            <input type="password" v-model="form.password" class="form-control" id="password"
               placeholder="Insira a password" />
           </section>
         </section>
@@ -128,10 +128,8 @@ export default {
         morada: "",
         codigopostal: "",
         freguesia: "",
-        auth: {
-          username: "",
-          password: "",
-        },
+        username: "",
+        password: "",
         notifications: true,
       },
       message: {
@@ -161,10 +159,8 @@ export default {
         accepted: false,
         level: "socio",
         bdate: this.form.bdate,
-        auth: {
-          username: this.form.auth.username,
-          password: this.form.auth.password,
-        },
+        username: this.form.username,
+        password: this.form.password,
         notifications: this.form.notifications,
       };
       if (this.checkForm() == true) {
@@ -211,10 +207,8 @@ export default {
         (this.form.morada = ""),
         (this.form.codigopostal = ""),
         (this.form.freguesia = ""),
-        (this.form.auth = {
-          username: "",
-          password: "",
-        }),
+        (this.form.username = ""),
+        (this.form.password = ""),
         (this.form.notifications = true)
       this.isShow = false
     },
@@ -234,8 +228,8 @@ export default {
         this.form.morada != "" &&
         this.form.codigopostal != "" &&
         this.form.freguesia != "" &&
-        this.form.auth.username != "" &&
-        this.form.auth.password != ""
+        this.form.username != "" &&
+        this.form.password != ""
       )
         return true;
       else return false;

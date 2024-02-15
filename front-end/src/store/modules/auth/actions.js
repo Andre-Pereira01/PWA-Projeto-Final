@@ -54,7 +54,7 @@ export default {
     async [AUTH_ACTION](context, payload) {
         let postData = {
             username: payload.username,
-            password: payload.password
+            password: payload.password,
         }
         let response = await axios.post(payload.url, postData)
 
