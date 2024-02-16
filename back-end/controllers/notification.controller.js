@@ -5,7 +5,6 @@ const {
     validationResult
 } = require('express-validator')
 
-//import method to send emails
 let { sendEmail } = require('../controllers/email.controller');
 
 exports.create = (req, res) => {
@@ -28,7 +27,6 @@ exports.create = (req, res) => {
                         if (error) throw error
                         let message = notificationMessages.success.s0
                         message.body = notification
-                            //if the new notification is marked to be sent, get all users that subscribed and send
                         if (notification.notifEmail == true) {
                             User.find({ 'notifications': true })
                                 .exec()

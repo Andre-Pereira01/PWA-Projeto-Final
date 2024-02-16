@@ -12,7 +12,7 @@
       {{ message.msg }}
     </section>
     <section class="row mt-3">
-      <h4>Sócios inscritos:</h4>
+      <h4 style="color: #1D1A55;">Sócios inscritos:</h4>
     </section>
     <section class="card mt-2">
       <section class="card-body">
@@ -20,14 +20,14 @@
           <tbody>
             <tr>
               <th>Nome</th>
-              <th>NIF</th>
-              <th>Cartão de Cidadão</th>
+              <th>Email</th>
+              <th>Telémovel</th>
               <th class="text-center">Ações</th>
             </tr>
             <tr v-for="user of this.usersAccepted" :key="user._id">
               <td>{{ user.firstname + " " + user.lastname }}</td>
-              <td>{{ user.nif }}</td>
-              <td>{{ user.cartaodecidadao }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.mobile }}</td>
               <td class="text-center">
                 <button
                   @click="detail(user._id)"
@@ -62,14 +62,14 @@
           <tbody>
             <tr>
               <th>Nome</th>
-              <th>NIF</th>
-              <th>Cartão de Cidadão</th>
+              <th>Email</th>
+              <th>Telemóvel</th>
               <th class="text-center">Ações</th>
             </tr>
             <tr v-for="user of this.usersToAccept" :key="user._id">
               <td>{{ user.firstname + " " + user.lastname }}</td>
-              <td>{{ user.nif }}</td>
-              <td>{{ user.cartaodecidadao }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.mobile }}</td>
               <td>
                 <button
                   @click="acceptStd(user._id)"
@@ -242,7 +242,9 @@ export default {
       this.usersToAccept = [];
       this.showLoader(true);
       await axios
-        .get("http://localhost:3000/user", {
+        // .get("http://localhost:3000/user", {
+          .get("https://gestao-socios-bmm-api.onrender.com/user",{
+
           headers: {
            Authorization: this.token,
           },
@@ -261,6 +263,8 @@ export default {
                 morada: users[i].morada,
                 codigopostal: users[i].codigopostal,
                 freguesia: users[i].freguesia,
+                email: users[i].email,
+                mobile: users[i].mobile,
               });
             } else if (
               users[i].accepted == false &&
@@ -270,8 +274,8 @@ export default {
                 _id: users[i]._id,
                 firstname: users[i].firstname,
                 lastname: users[i].lastname,
-                cartaodecidadao: users[i].cartaodecidadao,
-                nif: users[i].nif,
+                email: users[i].email,
+                mobile: users[i].mobile,
               });
             }
           }
@@ -285,7 +289,8 @@ export default {
     async acceptStd(_id) {
       this.showLoader(true);
       await axios
-        .put("http://localhost:3000/user/" + _id, {
+      .put("https://gestao-socios-bmm-api.onrender.com/user/" + _id, {
+        // .put("http://localhost:3000/user/" + _id, {
           headers: {
             Authorization: this.token,
           },
@@ -304,7 +309,8 @@ export default {
     async deleteStd(_id) {
       this.showLoader(true);
       await axios
-        .delete("http://localhost:3000/user/" + _id, {
+        .delete("https://gestao-socios-bmm-api.onrender.com/user/" + _id, {
+          // .delete("http://localhost:3000/user/" + _id, {
           headers: {
             Authorization: this.token,
           },
@@ -323,7 +329,8 @@ export default {
     async detail(_id) {
       (this.message.type = ""), (this.message.msg = ""), this.showLoader(true);
       await axios
-        .get("http://localhost:3000/user/" + _id, {
+        .get("https://gestao-socios-bmm-api.onrender.com/user/" + _id, {
+          // .get("http://localhost:3000/user/" + _id, {
           headers: {
             Authorization: this.token,
           },

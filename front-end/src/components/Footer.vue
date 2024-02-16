@@ -21,16 +21,29 @@
     opacity: 0.5;
   }
   .footer {
-    position: fixed;
+    position: fixed; 
     display: flex;
     width: 100%;
-    flex-direction: column;
+    
     align-items: center;
     padding: 0.2em;
     bottom: 0px;
     background-color: #1D1A55;
-    overflow: visible;
+    /* overflow: visible; */
+
   }
+  @media only screen and (max-width: 768px) {
+  .footer {
+    position: fixed; 
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0.2em;
+    bottom: 0px;
+    background-color: #1D1A55;
+    bottom: -20px;
+  }
+}
   .footer li {
     display: inline;
     padding-right: 0.5em;

@@ -139,14 +139,14 @@
         <section class="text-center">
           <button
             type="submit"
-            class="btn btn-outline-primary mt-4 me-4 my-button"
+            class="btn btn-outline-success mt-4 me-4 my-button"
           >
             ALTERAR
           </button>
           <button
             @click="leave()"
             type="button"
-            class="btn btn-outline-primary mt-4 my-button"
+            class="btn btn-outline-danger mt-4 my-button"
           >
             SAIR
           </button>
@@ -227,7 +227,8 @@ export default {
     async getsocioInfo() {
       (this.message.type = ""), (this.message.msg = ""), this.showLoader(true);
       await axios
-        .get("http://localhost:3000/user/" + this._id, {
+        .get("https://gestao-socios-bmm-api.onrender.com/user/" + this._id, {
+          
           headers: {
            Authorization: this.token,
           },
@@ -271,7 +272,7 @@ export default {
         notifications: this.form.notifications,
       };
       await axios
-        .patch("http://localhost:3000/user/" + this._id, postData, {
+        .patch("https://gestao-socios-bmm-api.onrender.com/user/" + this._id, postData, {
           headers: {
            Authorization: this.token,
           },

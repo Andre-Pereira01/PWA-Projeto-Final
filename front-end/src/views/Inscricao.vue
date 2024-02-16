@@ -83,6 +83,12 @@
       <section class="spacer"></section>
     </section>
   </section>
+  <br/>
+    
+  <br/>
+    
+  <br/>
+    
 </template>
   
 <style scoped>
@@ -166,7 +172,7 @@ export default {
       if (this.checkForm() == true) {
         this.showLoader(true);
         await axios
-          .post("http://localhost:3000/user", postData)
+          .post("https://gestao-socios-bmm-api.onrender.com/user", postData)
           .then((response) => {
             if (response.data.http == 201) {
               this.showLoader(false);

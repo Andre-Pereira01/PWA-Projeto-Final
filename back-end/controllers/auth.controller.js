@@ -37,11 +37,6 @@ exports.login = async (req, res) => {
             return res.status(401).json({ message: 'Credenciais inválidas.' });
         }
 
-        // const jwt = require('jsonweb');
-        // const secretKey = 'your_secret_key';
-
-        // // Generate the JWT 
-        // const token = jwt.sign({ user }, secretKey, { expiresIn: '1h' });
         const userData = {
             _id: user._id,
             firstname: user.firstname,

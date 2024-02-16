@@ -89,21 +89,14 @@
           <button
             type="submit"
             v-on:click="createNotif"
-            class="btn btn-outline-primary mt-4 me-4 my-button"
+            class="btn btn-outline-success mt-4 me-4 my-button"
           >
             CRIAR
           </button>
           <button
-            v-on:click="cleanForm"
-            type="button"
-            class="btn btn-outline-primary mt-4 me-4 my-button"
-          >
-            LIMPAR
-          </button>
-          <button
             @click="leave()"
             type="button"
-            class="btn btn-outline-primary mt-4 my-button"
+            class="btn btn-outline-danger mt-4 my-button"
           >
             SAIR
           </button>
@@ -186,7 +179,7 @@
             notifPage: this.form.notifPage,
           };
           await axios
-            .post("http://localhost:3000/notification", postData)
+            .post("https://gestao-socios-bmm-api.onrender.com/notification", postData)
             .then((response) => {
               if (response.data.http == 201) {
                 this.showLoader(false);
