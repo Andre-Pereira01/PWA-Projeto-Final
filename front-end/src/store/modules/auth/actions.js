@@ -63,7 +63,7 @@ export default {
         console.log(response.status)
         if (response.status === 200) {
             console.log(response.data)
-            let expirationTime = +response.data.body.expiresIn * 1000
+            let expirationTime = +response.data.expiresIn * 1000
             timer = setTimeout(() => {
                 context.dispatch(AUTO_LOGOUT_ACTION)
             }, expirationTime)
@@ -75,6 +75,7 @@ export default {
                 expiresIn: expirationTime,
                 token: response.data.token
             }
+            console.log(tokenData)
             localStorage.setItem('userData', JSON.stringify(tokenData))
             context.commit(SET_USER_TOKEN_DATA_MUTATION, tokenData)
             return true

@@ -83,15 +83,13 @@
         let response = await this._login({
           username: this.form.username,
           password: this.form.password,
-        }).catch(() => {
-          this.error = "Username ou password incorreta!";
-          this.showLoader(false);
-        });
+        })
         if (response) {
           this.showLoader(false);
-          if (this.level == "admin") this.$router.replace("/admin");
-          else if (this.level == "socio") this.$router.replace("/");
+          if (this.level === "admin") this.$router.replace("/admin");
+          else if (this.level === "socio") this.$router.replace("/");
         } else {
+          console.log("SEGUNDO CATCH")
           this.error = "Username ou password incorreta!";
           this.showLoader(false);
         }

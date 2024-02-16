@@ -49,7 +49,7 @@ exports.login = async (req, res) => {
             morada: user.morada,
             level: user.level,
             expiresIn: CONFIG.auth.expiration_time,
-            token: token
+            token: "adjlk212342345ytygfdsa65gf4dASDDSFGH32WSDFG"
         };
 
         return res.status(200).json(userData);
