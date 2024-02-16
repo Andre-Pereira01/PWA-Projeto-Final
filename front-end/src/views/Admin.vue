@@ -2,7 +2,7 @@
 <template id="example-modal">
   <section class="container">
     <section class="row mt-3 text-center">
-      <h1 class="text-center">GESTÃO DE SÓCIOS</h1>
+      <h1 class="text-center" style="color:#1D1A55">Gestão de Sócios</h1>
     </section>
     <section v-if=isShow
       class="alert mt-3"
@@ -70,7 +70,7 @@
               <td>{{ user.firstname + " " + user.lastname }}</td>
               <td>{{ user.email }}</td>
               <td>{{ user.mobile }}</td>
-              <td>
+              <!-- <td>
                 <button
                   @click="acceptStd(user._id)"
                   type="button"
@@ -85,9 +85,30 @@
                   class="btn btn-danger btn-sm me-2 ac-btn"
                 >
                   <i class="far fa-trash-alt me-1" aria-hidden="true"></i
-                  >Rejeitar
+                  >Não aceitar
                 </button>
-              </td>
+              </td> -->
+              <td>
+  <div class="text-center">
+    <button
+      @click="acceptStd(user._id)"
+      type="button"
+      class="btn btn-success btn-sm me-2 ac-btn"
+    >
+      <i class="fas fa-check me-1 act-btn" aria-hidden="true"></i
+      >Aceitar
+    </button>
+    <button
+      @click="deleteStd(user._id)"
+      type="button"
+      class="btn btn-danger btn-sm me-2 ac-btn"
+    >
+      <i class="far fa-trash-alt me-1" aria-hidden="true"></i
+      >Não aceitar
+    </button>
+  </div>
+</td>
+
             </tr>
           </tbody>
         </table>

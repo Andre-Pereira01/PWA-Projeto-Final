@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <h1 class="mt-5 mb-4">Sobre a Banda</h1>
+      <h1 class="mt-5 mb-4" style="color:#1D1A55">Sobre a Banda</h1>
       <div class="card mb-4">
         <div class="card-body">
           <p>

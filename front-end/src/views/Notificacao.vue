@@ -1,7 +1,7 @@
 <template>
     <section class="scrolling-component" ref="scrollcomponent">
       <section class="container my-body">
-        <h1 class="text-center mt-5">CRIAR NOTÍCIA / NOTIFICAÇÃO</h1>
+        <h1 class="text-center mt-5" style="color: #1D1A55;">Criar Notícia / Notificação</h1>
         <section
           v-if="isShow"
           role="alert"
@@ -104,6 +104,10 @@
         <section class="spacer"></section>
       </section>
     </section>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
   </template>
   
   <style scoped>

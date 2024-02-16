@@ -3,7 +3,7 @@
 <template>
   <section class="scrolling-component" ref="scrollcomponent">
     <section class="container my-body">
-      <h1 class="text-center mt-5">DETALHES DA CONTA</h1>
+      <h1 class="text-center mt-5" style="color:#1D1A55" >Detalhes da Conta</h1>
       <section v-if=isShow
         class="alert mt-3"
         role="alert"

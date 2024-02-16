@@ -65,7 +65,7 @@ const routes = [{
         path: '/conta',
         name: 'conta',
         component: conta,
-        meta: { auth: false }
+        meta: { auth: true }
     }
 ]
 
