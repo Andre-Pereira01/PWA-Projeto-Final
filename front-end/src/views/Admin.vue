@@ -244,7 +244,7 @@ export default {
       await axios
         .get("http://localhost:3000/user", {
           headers: {
-            Authorization: this.token,
+           Authorization: this.token,
           },
         })
         .then((response) => {

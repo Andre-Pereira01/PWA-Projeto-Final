@@ -224,7 +224,7 @@
         this.isShow = false;
       },
       leave() {
-        this.$router.replace("/Admin");
+        this.$router.replace("/admin");
       },
       checkForm() {
         if (

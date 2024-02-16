@@ -229,7 +229,7 @@ export default {
       await axios
         .get("http://localhost:3000/user/" + this._id, {
           headers: {
-            Authorization: this.token,
+           Authorization: this.token,
           },
         })
         .then((response) => {
@@ -273,7 +273,7 @@ export default {
       await axios
         .patch("http://localhost:3000/user/" + this._id, postData, {
           headers: {
-            Authorization: this.token,
+           Authorization: this.token,
           },
         })
         .then((response) => {
